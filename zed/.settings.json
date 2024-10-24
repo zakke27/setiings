@@ -1,0 +1,93 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "vim_mode": true,
+  "features": {
+    "inline_completion_provider": "supermaven"
+  },
+  "theme": "Zedokai Classic",
+  "experimental.theme_overrides": {},
+  "tabs": {
+    "git_status": true
+  },
+  "notification_panel": {
+    "dock": "right"
+  },
+  "project_panel": {
+    "dock": "right",
+    "indent_size": 10
+  },
+  "assistant": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-20240620"
+    },
+    "default_width": 370,
+    "version": "2",
+    "button": true,
+    "dock": "left"
+  },
+  "base_keymap": "VSCode",
+  "autosave": "on_focus_change",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "buffer_font_size": 15,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "terminal": {
+    "font_size": 13
+  },
+  "file_types": {
+    "JSON": [".prettierrc"],
+    "Dockerfile": ["Dockerfile.*"],
+    "JSONC": ["settings.json"]
+  },
+  "format_on_save": "on",
+  "formatter": {
+    "external": {
+        // "command": "prettier",
+      "command": "node_modules/.bin/prettier",
+      "arguments": ["--stdin-filepath", "{buffer_path}"]
+    }
+  },
+  "code_actions_on_format": {
+    "source.fixAll.eslint": true
+    // "source.organizeImports": true
+  },
+  "lsp": {
+    "vtsls": {
+      "setting": {
+        "typescript": {
+          "inlayHints": {
+            "parameterNames": {
+              "enabled": "all",
+              "suppressWhenArgumentMatchesName": false
+            },
+            "parameterTypes": {
+              "enabled": true
+            },
+            "variableTypes": {
+              "enabled": true,
+              "suppressWhenTypeMatchesName": true
+            }
+          }
+          // "tsserver": { "maxTsServerMemory": 16184 }
+        }
+      }
+    },
+    "eslint": {
+      "settings": {
+        "problems": {
+          "shortenToSingleLine": true
+        }
+      }
+    }
+  }
+}
