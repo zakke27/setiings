@@ -1,66 +1,68 @@
 {
-  "workbench.iconTheme": "vscode-icons",
-  "workbench.colorTheme": "Nettoyer Monokai",
-  "workbench.sideBar.location": "right",
-  "workbench.tree.enableStickyScroll": true,
+  // "editor.inlayHints.enabled": "off",
+  //
+  "workbench.startupEditor": "none",
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.folders.color": "#42a5f5",
   "window.commandCenter": false,
-  "files.autoSave": "onFocusChange",
+  "explorer.confirmDelete": false,
+  "explorer.confirmPasteNative": false,
+  "explorer.compactFolders": false,
+  "editor.accessibilitySupport": "off",
+  "editor.tabSize": 2,
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  // "editor.fontLigatures": true,
+  "editor.mouseWheelZoom": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.minimap.renderCharacters": false,
+  "editor.inlayHints.maximumLength": 25,
+  "editor.rulers": [100],
+  "editor.linkedEditing": true,
+  //
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
     // "source.organizeImports": "explicit"
   },
-  "editor.formatOnSave": true,
-  "editor.formatOnSaveMode": "file",
-  "editor.fontFamily": "JetBrainsMono Nerd Font",
-  "editor.tabSize": 2,
-  "editor.mouseWheelZoom": true,
-  "editor.rulers": [100, 150],
-  "editor.guides.bracketPairs": "active",
-  "editor.minimap.renderCharacters": false,
-  "editor.linkedEditing": true,
-  "explorer.confirmDelete": false,
-  "explorer.confirmPasteNative": false,
-  "explorer.compactFolders": false,
-
-  "typescript.inlayHints.variableTypes.enabled": true,
-  "typescript.inlayHints.parameterNames.enabled": "all",
-  "typescript.inlayHints.parameterTypes.enabled": true,
-
-  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
-  // "typescript.inlayHints.enumMemberValues.enabled": true,
-  // "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
-
-  "typescript.preferences.preferTypeOnlyAutoImports": true,
-  "editor.inlayHints.maximumLength": 25,
-
-  "scm.countBadge": "all",
-  "git.autofetch": true,
-  "git.confirmSync": false,
-  "git.enableSmartCommit": true,
+  //
+  "workbench.sideBar.location": "right",
+  "workbench.colorTheme": "Nettoyer Monokai",
+  //
+  "files.autoSave": "onFocusChange",
+  "files.eol": "\n",
   "files.associations": {
-    "*.env*": "dotenv"
+    "*.env*": "env",
+    "*.css": "tailwindcss"
   },
-  "reactSnippets.settings.importReactOnTop": false,
-  "codeium.enableCodeLens": false,
-  "workbench.startupEditor": "none",
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "svg.preview.mode": "svg",
-  "color-highlight.matchHslWithNoFunction": true,
   "[svg]": {
     "editor.defaultFormatter": "jock.svg"
   },
-  "diffEditor.ignoreTrimWhitespace": true,
-  "workbench.editor.customLabels.patterns": {
-    "**/app/**/page.tsx": "${dirname} - page.tsx",
-    "**/app/**/layout.tsx": "${dirname} - layout.tsx",
-    "**/component/**/index.tsx": "${dirname} - component.tsx",
-
-    "**/pages/**/index.tsx": "${dirname} - page.tsx",
-    "**/pages/**/*.tsx": "${filename} - page.tsx"
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
-  "editor.accessibilitySupport": "off"
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  //
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  //
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
+  //
+  "reactSnippets.settings.importReactOnTop": false,
+  "color-highlight.matchHslWithNoFunction": true,
+  "supermaven.allowGitignore": true,
+  "markdown-preview-github-styles.colorTheme": "light",
+  "codeium.enableCodeLens": false,
+  "svg.preview.mode": "svg"
 }
