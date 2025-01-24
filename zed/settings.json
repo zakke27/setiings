@@ -1,93 +1,117 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run the `open default settings` command
-// from the command palette or from `Zed` application menu.
 {
-  "vim_mode": true,
-  "features": {
-    "inline_completion_provider": "supermaven"
-  },
-  "theme": "Zedokai Classic",
-  "experimental.theme_overrides": {},
-  "tabs": {
-    "git_status": true
-  },
-  "notification_panel": {
-    "dock": "right"
-  },
-  "project_panel": {
-    "dock": "right",
-    "indent_size": 10
-  },
-  "assistant": {
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-20240620"
-    },
-    "default_width": 370,
-    "version": "2",
-    "button": true,
-    "dock": "left"
-  },
   "base_keymap": "VSCode",
-  "autosave": "on_focus_change",
   "telemetry": {
     "diagnostics": false,
     "metrics": false
   },
-  "buffer_font_size": 15,
-  "buffer_font_family": "JetBrainsMono Nerd Font",
-  "terminal": {
-    "font_size": 13
+  "project_panel": {
+    "dock": "right",
+    "indent_size": 14,
+    "auto_fold_dirs": false,
+    "show_diagnostics": "all"
   },
-  "file_types": {
-    "JSON": [".prettierrc"],
-    "Dockerfile": ["Dockerfile.*"],
-    "JSONC": ["settings.json"]
-  },
-  "format_on_save": "on",
-  "formatter": {
-    "external": {
-        // "command": "prettier",
-      "command": "node_modules/.bin/prettier",
-      "arguments": ["--stdin-filepath", "{buffer_path}"]
+  "language_models": {
+    "openai": {
+      "version": "1",
+      "api_url": "https://api.deepseek.com",
+      "available_models": [
+        {
+          "name": "deepseek-coder",
+          "max_tokens": 128000
+        },
+        {
+          "name": "deepseek-chat",
+          "max_tokens": 128000
+        }
+      ]
     }
   },
-  "code_actions_on_format": {
-    "source.fixAll.eslint": true
-    // "source.organizeImports": true
+  "assistant": {
+    // "default_model": {
+    //   "provider": "openai",
+    //   "model": "deepseek-coder"
+    // },
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
+    },
+    "version": "2",
+    "default_width": 350,
+    "button": true,
+    "dock": "left"
+  },
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
+  },
+  "terminal": {
+    "button": false,
+    "font_size": 13,
+    "toolbar": { "breadcrumbs": false }
+  },
+  "collaboration_panel": { "button": false },
+  "chat_panel": { "button": "when_in_call" },
+  "notification_panel": { "dock": "left" },
+
+  "theme": "Vercel Dark Pro",
+  "show_user_picture": false,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_size": 13.5,
+  "buffer_font_features": { "zero": true },
+  "tab_size": 2,
+  "git": {
+    "inline_blame": {
+      "show_commit_summary": true
+    }
+  },
+
+  "file_types": {
+    "JSONC": [".prettierrc"],
+    "Dockerfile": ["Dockerfile.*"],
+    "env": [".env.*"],
+    "tailwind": [".*css"]
   },
   "lsp": {
     "vtsls": {
-      "setting": {
+      "initialization_options": {
+        "vtsls": { "autoUseWorkspaceTsdk": true }
+      },
+      "settings": {
         "typescript": {
-          "inlayHints": {
-            "parameterNames": {
-              "enabled": "all",
-              "suppressWhenArgumentMatchesName": false
-            },
-            "parameterTypes": {
-              "enabled": true
-            },
-            "variableTypes": {
-              "enabled": true,
-              "suppressWhenTypeMatchesName": true
+          "preferences": {
+            "preferTypeOnlyAutoImports": true
+          }
+        },
+        "vtsls": {
+          "autoUseWorkspaceTsdk": true,
+          "experimental": {
+            "completion": {
+              "enableServerSideFuzzyMatch": true,
+              "entriesLimit": 1500 // default 5000
             }
           }
-          // "tsserver": { "maxTsServerMemory": 16184 }
         }
       }
     },
     "eslint": {
       "settings": {
-        "problems": {
-          "shortenToSingleLine": true
-        }
+        "problems": { "shortenToSingleLine": true }
       }
     }
+  },
+  "languages": {
+    "Markdown": { "show_inline_completions": false },
+    "JSONC": { "show_inline_completions": false },
+    "TSX": {
+      // "show_inline_completions": false,
+      "formatter": "prettier"
+    }
+  },
+  "autosave": "on_focus_change",
+  "features": {
+    "inline_completion_provider": "copilot"
+  },
+  "experimental.theme_overrides": {
+    "syntax": {}
   }
 }
