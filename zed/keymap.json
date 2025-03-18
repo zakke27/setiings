@@ -1,0 +1,22 @@
+[
+  {
+    "context": "Editor",
+    "use_key_equivalents": true,
+    "bindings": {
+      "cmd-i": "editor::ShowCompletions",
+      "cmd-shift-i": "editor::ShowSignatureHelp"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-g cmd-g": [
+        "task::Spawn",
+        {
+          "task_name": "Open Lazygit",
+          "reveal_target": "center"
+        }
+      ]
+    }
+  }
+]
