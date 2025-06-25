@@ -7,47 +7,133 @@
   "project_panel": {
     "dock": "right",
     "indent_size": 14,
-    "auto_fold_dirs": false,
+    "auto_fold_dirs": true,
     "show_diagnostics": "all"
   },
   "collaboration_panel": { "button": false },
   "chat_panel": { "button": "when_in_call" },
   "notification_panel": { "dock": "left" },
+  "title_bar": {
+    "show_user_picture": true,
+    "show_branch_icon": true
+  },
 
-  "ui_font_size": 16,
-  "buffer_font_size": 13.5,
+  "ui_font_size": 15,
+  "buffer_font_size": 13,
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "buffer_font_features": { "zero": true },
   "tab_size": 2,
+  "tabs": { "file_icons": true },
   "theme": {
-    "mode": "system",
-    "light": "Monospace dark",
-    "dark": "Monospace dark"
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Carbonfox"
   },
-  "icon_theme": "Catppuccin Frappé",
+  "icon_theme": "Catppuccin Mocha",
   "terminal": {
     "button": false,
     "font_size": 13,
     "toolbar": { "breadcrumbs": false }
   },
-  "assistant": {
+
+  "lsp_document_colors": "background",
+
+  "debugger": {
+    "dock": "bottom"
+  },
+
+  "agent": {
+    "play_sound_when_agent_done": true,
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-latest"
+      "model": "claude-sonnet-4"
     },
+    "single_file_review": true,
+    "always_allow_tool_actions": true,
+    "stream_edits": true,
+    "profiles": {
+      "ask": {
+        "name": "Ask",
+        "tools": {
+          "contents": true,
+          "diagnostics": true,
+          "fetch": true,
+          "list_directory": true,
+          "now": true,
+          "find_path": true,
+          "read_file": true,
+          "grep": true,
+          "thinking": true,
+          "web_search": true,
+          "terminal": true
+        },
+        "enable_all_context_servers": true,
+        "context_servers": {}
+      },
+      "write": {
+        "name": "Write",
+        "tools": {
+          "open": true,
+          "create_directory": true,
+          "batch_tool": true,
+          "code_actions": true,
+          "code_symbols": true,
+          "contents": true,
+          "copy_path": true,
+          "create_file": true,
+          "delete_path": true,
+          "diagnostics": true,
+          "edit_file": true,
+          "fetch": true,
+          "list_directory": true,
+          "move_path": true,
+          "now": true,
+          "find_path": true,
+          "read_file": true,
+          "grep": true,
+          "rename": true,
+          "symbol_info": true,
+          "terminal": true,
+          "thinking": true,
+          "web_search": true
+        },
+        "enable_all_context_servers": true,
+        "context_servers": {}
+      }
+    },
+    "default_profile": "write",
+
+    // "default_model": {},
+
+    "inline_assistant_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
+    },
+
     "version": "2",
-    "default_width": 350,
+    "default_width": 330,
     "button": true,
-    "dock": "left",
-    "enable_experimental_live_diffs": true
+    "dock": "left"
   },
+  "agent_font_size": 15,
+  "minimap": {
+    // "show": "auto",
+    // "thumb": "hover"
+  },
+
   "git": {
     "inline_blame": {
       "show_commit_summary": true
-    }
+    },
+    "hunk_style": "unstaged_hollow"
   },
+
   "features": {
     "edit_prediction_provider": "zed"
+  },
+  "edit_predictions": {
+    "mode": "eager",
+    "enabled_in_text_threads": true
   },
   "file_types": {
     "JSONC": [".prettierrc"],
@@ -55,5 +141,41 @@
     "env": [".env.*"],
     "tailwind": [".*css"]
   },
-  "autosave": "on_focus_change"
+  "snippet_sort_order": "top",
+  "autosave": "on_focus_change",
+
+  "prettier": {
+    "allowed": true,
+    "semi": false,
+    "singleQuote": true,
+    "jsxSingleQuote": false
+  },
+
+  // @see https://github.com/zed-industries/zed/issues/14544
+  "language_servers": ["!biome", "!typescript-language-server", "..."],
+
+  "lsp": {
+    "vtsls": {
+      "experimental": {
+        "completion": {
+          "enableServerSideFuzzyMatch": true,
+          "entriesLimit": 2000
+        }
+      },
+      "settings": {
+        "typescript": {
+          "preferences": {
+            "preferTypeOnlyAutoImports": true
+          }
+        }
+      }
+    }
+    // "tailwindcss-language-server": {
+    //   "settings": {
+    //     "tailwindCSS": {
+    //       "tailwindCSS": false
+    //     }
+    //   }
+    // }
+  }
 }
